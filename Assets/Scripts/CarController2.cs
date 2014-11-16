@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CarController : MonoBehaviour {
+public class CarController2 : MonoBehaviour {
 	public WheelCollider FrontLeftTire;
 	public WheelCollider FrontRightTire;
 	public WheelCollider BackLeftTire;
@@ -17,37 +17,34 @@ public class CarController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButtonDown ("Fire1")){
+		if(Input.GetKeyDown (KeyCode.UpArrow)){
 			FrontLeftTire.motorTorque = motorTorque;
 			FrontRightTire.motorTorque = motorTorque;	
 		}
-		if(Input.GetButtonUp ("Fire1")){
+		if(Input.GetKeyUp (KeyCode.UpArrow)){
 			FrontLeftTire.motorTorque = 0;
 			FrontRightTire.motorTorque = 0;
 		}
-		if(Input.GetButtonDown ("Fire2")){
+		if(Input.GetKeyDown (KeyCode.DownArrow)){
 			FrontLeftTire.motorTorque = -motorTorque;
 			FrontRightTire.motorTorque = -motorTorque;
 		}
-		if(Input.GetButtonUp ("Fire2"))
-		{
+		if(Input.GetKeyUp (KeyCode.DownArrow)){
 			FrontLeftTire.motorTorque = 0;
 			FrontRightTire.motorTorque = 0;
 		}
-		if(Input.GetKeyUp (KeyCode.S)){
-			FrontLeftTire.motorTorque = 0;
-			FrontRightTire.motorTorque = 0;
-		}
-		FrontLeftTire.steerAngle = (Input.GetAxis("Horizontal") * 20);
-		FrontRightTire.steerAngle = (Input.GetAxis ("Horizontal") * 20);
-		Debug.Log (FrontLeftTire.steerAngle);
-		if(Input.GetKey (KeyCode.A)){
+		if(Input.GetKey (KeyCode.LeftArrow)){
 			FrontLeftTire.steerAngle = -20;
 			FrontRightTire.steerAngle = -20;
 		}
-		if(Input.GetKey (KeyCode.D)){
+		if(Input.GetKey (KeyCode.RightArrow)){
 			FrontLeftTire.steerAngle = 20;
 			FrontRightTire.steerAngle = 20;
+		}
+		if((!Input.GetKey (KeyCode.RightArrow)) && (!Input.GetKey (KeyCode.LeftArrow)))
+		{
+			FrontLeftTire.steerAngle = 0;
+			FrontRightTire.steerAngle = 0;
 		}
 	}
 }
