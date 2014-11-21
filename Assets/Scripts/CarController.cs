@@ -40,7 +40,6 @@ public class CarController : MonoBehaviour {
 		}
 		FrontLeftTire.steerAngle = (Input.GetAxis("Horizontal") * 20);
 		FrontRightTire.steerAngle = (Input.GetAxis ("Horizontal") * 20);
-		Debug.Log (FrontLeftTire.steerAngle);
 		if(Input.GetKey (KeyCode.A)){
 			FrontLeftTire.steerAngle = -20;
 			FrontRightTire.steerAngle = -20;
