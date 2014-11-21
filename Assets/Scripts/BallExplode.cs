@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BallExplode : MonoBehaviour {
-
+	private bool hasBeenHit = false;
 	// Use this for initialization
 	void Start () {
 	
@@ -19,7 +19,13 @@ public class BallExplode : MonoBehaviour {
 			Debug.Log (col.rigidbody.name);
 			col.rigidbody.mass = 1.0f;
 			col.rigidbody.freezeRotation = false;
-			col.rigidbody.AddForce (gameObject.rigidbody.velocity.normalized * 10000);
+		//	col.rigidbody.AddForce (gameObject.rigidbody.velocity.normalized * 10000);
+		//	col.transform.parent = this.transform;
+		//	col.transform.localPosition = Vector3.zero;
+			col.collider.enabled = false;
+			Destroy(col.transform.GetComponent<Rigidbody>());
+			col.gameObject.AddComponent<FixedJoint>().connectedBody = rigidbody;
+			hasBeenHit = true;
 		}
 	}
 }
