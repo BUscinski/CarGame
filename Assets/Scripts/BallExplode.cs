@@ -14,7 +14,7 @@ public class BallExplode : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision col)
 	{
-		if(col.gameObject.tag != gameObject.tag && col.gameObject.tag != "default")
+		if(col.gameObject.tag != gameObject.tag && col.gameObject.tag != "default" && col.gameObject.name != "Ball")
 		{
 			Debug.Log (col.rigidbody.name);
 			col.rigidbody.mass = 1.0f;
