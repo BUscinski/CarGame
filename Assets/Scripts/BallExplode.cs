@@ -14,7 +14,7 @@ public class BallExplode : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision col)
 	{
-		if(col.gameObject.tag != gameObject.tag && col.gameObject.tag != "default" && col.gameObject.name != "Ball")
+		if(col.gameObject.tag != gameObject.tag && col.gameObject.tag != "Default" && col.gameObject.name != "Ball")
 		{
 			Debug.Log (col.rigidbody.name);
 			col.rigidbody.mass = 1.0f;
@@ -22,7 +22,7 @@ public class BallExplode : MonoBehaviour {
 		//	col.rigidbody.AddForce (gameObject.rigidbody.velocity.normalized * 10000);
 		//	col.transform.parent = this.transform;
 		//	col.transform.localPosition = Vector3.zero;
-			col.collider.enabled = false;
+		//	col.collider.enabled = false;
 			Destroy(col.transform.GetComponent<Rigidbody>());
 			col.gameObject.AddComponent<FixedJoint>().connectedBody = rigidbody;
 			hasBeenHit = true;
