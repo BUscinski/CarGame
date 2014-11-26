@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class BallExplode : MonoBehaviour {
+	public AudioClip carExploding;
 	private bool hasBeenHit = false;
 	// Use this for initialization
 	void Start () {
@@ -30,6 +31,7 @@ public class BallExplode : MonoBehaviour {
 				{
 					col.transform.GetComponentInChildren<Exploder>().Explode();
 				}
+				GetComponent<AudioSource>().PlayOneShot(carExploding);
 			}
 		}
 	}
