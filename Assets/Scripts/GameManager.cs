@@ -12,7 +12,14 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown (KeyCode.Space))
 		{
-			Application.LoadLevel ("test");
+			if(Application.loadedLevelName == "Katamari")
+			{
+				Application.LoadLevel ("Katamari");
+			}
+			if(Application.loadedLevelName == "Explode")
+			{
+				Application.LoadLevel ("Explode");
+			}
 		}
 	}
 }

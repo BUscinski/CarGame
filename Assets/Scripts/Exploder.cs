@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Exploder : MonoBehaviour 
 {
-	private void Explode()
+	public void Explode()
 	{
 		foreach (Transform t in transform)
 		{
