@@ -6,7 +6,7 @@ public class CarController : MonoBehaviour {
 	public WheelCollider FrontRightTire;
 	public WheelCollider BackLeftTire;
 	public WheelCollider BackRightTire;
-	
+
 	public float motorTorque;
 	public float brakeTorque;
 

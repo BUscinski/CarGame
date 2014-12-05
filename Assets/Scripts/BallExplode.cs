@@ -25,8 +25,6 @@ public class BallExplode : MonoBehaviour {
 				col.rigidbody.mass = 1.0f;
 				col.rigidbody.AddForce (gameObject.rigidbody.velocity.normalized * 10000);
 			
-				col.transform.tag = this.tag;
-
 				if(col.transform.GetComponentInChildren<Exploder>())
 				{
 					col.transform.GetComponentInChildren<Exploder>().Explode();
